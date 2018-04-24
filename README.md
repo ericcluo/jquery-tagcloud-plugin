@@ -20,5 +20,5 @@ then generate the tagcloud with different sizes and colors:
     });
 
 ## Demo
-[Click here to view](https://luocongsky.github.io/jquery-tagcloud-plugin/).
+[Click here to view](https://ericcluo.github.io/jquery-tagcloud-plugin/).
     
