@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Simple jQuery tagcloud plugin</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="js/tagcloud.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <a href="http://github.com/luocongsky"><img src="img/Fork-me-on-Github.png"></a>
+    <div class="container">
+        <h1>jQuery tagcloud plugin</h1>
+        <h2>Author: 罗聪</h2>
+        <div id="tagcloud">
+            <a href="#" rel='4'><span>C++<sup>4</sup></span></a>
+            <a href="#" rel='2'><span>Java<sup>2</sup></span></a>
+            <a href="#" rel='5'><span>Python<sup>5</sup></span></a>
+            <a href="#" rel='5'><span>javascript<sup>5</sup></span></a>
+            <a href="#" rel='4'><span>react<sup>4</sup></span></a>
+            <a href="#" rel='3'><span>AngularJs<sup>3</sup></span></a>
+            <a href="#" rel='5'><span>机器学习<sup>5</sup></span></a>
+            <a href="#" rel='5'><span>深度学习<sup>5</sup></span></a>
+            <a href="#" rel='2'><span>tensorflow<sup>2</sup></span></a>
+            <a href="#" rel='9'><span>caffe<sup>3</sup></span></a>
+            <a href="#" rel='1'><span>theano<sup>1</sup></span></a>
+            <a href="#" rel='10'><span>keras<sup>4</sup></span></a>
+            <a href="#" rel='11'><span>torch<sup>2</sup></span></a>
+            <a href="#" rel='12'><span>shell<sup>4</sup></span></a>
+            <a href="#" rel='13'><span>haskell<sup>1</sup></span></a>
+            <a href="#" rel='14'><span>个人笔记<sup>2</sup></span></a>
+            <a href="#" rel='15'><span>algorithms<sup>4</sup></span></a>
+            <a href="#" rel='4'><span>LeetCode<sup>4</sup></span></a>
+            <a href="#" rel='5'><span>Hackerrank<sup>3</sup></span></a>
+            <a href="#" rel='3'><span>Codewars<sup>3</sup></span></a>
+            <a href="#" rel='16'><span>GeeksforGeeks<sup>3</sup></span></a>
+            <a href="#" rel='4'><span>Superhero.js<sup>2</sup></span></a>
+            <a href="#" rel='4'><span>Pure<sup>2</sup></span></a>
+            <a href="#" rel='4'><span>UIKit<sup>3</sup></span></a>
+            <a href="#" rel='4'><span>Foundation<sup>2</sup></span></a>
+            <a href="#" rel='4'><span>Semantic UI<sup>3</sup></span></a>
+            <a href="#" rel='3'><span>Bitbucket<sup>2</sup></span></a>
+            <a href="#" rel='3'><span>scikit-learn<sup>5</sup></span></a>
+            <a href="#" rel='2'><span>pandas<sup>2</sup></span></a>
+            <a href="#" rel='2'><span>jekyll<sup>3</sup></span></a>
+            <a href="#" rel='2'><span>kaggle<sup>1</sup></span></a>
+            <a href="#" rel='1'><span>medium<sup>2</sup></span></a>
+            <a href="#" rel='1'><span>Vue<sup>1</sup></span></a>
+            <a href="#" rel='1'><span>d3.js<sup>4</sup></span></a>
+            <a href="#" rel='1'><span>jquery<sup>3</sup></span></a>
+            <a href="#" rel='1'><span>Backbone<sup>2</sup></span></a>
+            <a href="#" rel='1'><span>git<sup>2</sup></span></a>
+            <a href="#" rel='10'><span>svn<sup>1</sup></span></a>
+            <a href="#" rel='10'><span>阅读<sup>2</sup></span></a>
+            <a href="#" rel='10'><span>思考<sup>1</sup></span></a>
+            <a href="#" rel='2'><span>总结<sup>2</sup></span></a>
+            <a href="#" rel='2'><span>书籍<sup>2</sup></span></a>
+            <a href="#" rel='15'><span>Coursera<sup>1</sup></span></a>
+            <a href="#" rel='15'><span>edX<sup>2</sup></span></a>
+            <a href="#" rel='4'><span>Udacity<sup>4</sup></span></a>
+            <a href="#" rel='8'><span>treehouse<sup>3</sup></span></a>
+            <a href="#" rel='4'><span>mongodb<sup>4</sup></span></a>
+            <a href="#" rel='2'><span>data science<sup>6</sup></span></a>
+            <a href="#" rel='2'><span>SQL<sup>3</sup></span></a>
+            <a href="#" rel='3'><span>lasagne<sup>3</sup></span></a>
+            <a href="#" rel='6'><span>scala<sup>2</sup></span></a>
+            <a href="#" rel='6'><span>Spark<sup>6</sup></span></a>
+        </div>
+        <form action="#" method="get" accept-charset="utf-8" id="tagForm">
+            <h2>标签字体大小</h2>
+            <p>
+                <input type="text" value="20" id="minFont">
+                <label for="min">to </label>
+                <input type="text" value="30" id="maxFont">
+                <select name="unit" id="unit">
+                    <option value="px">px</option>
+                    <option value="em">em</option>
+                </select>
+            </p>
+            <h2>颜色渐变</h2>
+            <p>
+                <label># </label>
+                <input type="text" value="1c5866" id="startColour">
+                <label>to # </label>
+                <input type="text" value="661c49" id="endColour">
+            </p>
+
+            <p>
+                <input type="submit" value="重新构建云标签">
+            </p>
+        </form>
+    </div>
+    <script>
+        $("#tagcloud a").tagcloud();
+
+        $('#tagForm').submit(function() {
+            $("#tagcloud a").tagcloud({
+                size: {
+                    start: parseInt($('#minFont').val()),
+                    end: parseInt($('#maxFont').val()),
+                    unit: $('#unit').val()
+                },
+                color: {
+                    start: "#" + $('#startColour').val(),
+                    end: "#" + $('#endColour').val()
+                }
+            })
+            return false;
+        })
+
+    </script>
+</body>
