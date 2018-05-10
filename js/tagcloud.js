@@ -8,7 +8,7 @@
         tagWeights = jQuery.makeArray(tagWeights).sort(compareWeights);
         lowest = tagWeights[0];
         highest = tagWeights.pop();
-        range = highest - lowest;
+        range = Math.max(highest - lowest, 1);
         // Sizes
         if (opts.size) {
             fontIncr = (opts.size.end - opts.size.start) / range;
